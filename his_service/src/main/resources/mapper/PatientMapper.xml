@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luojiawei.his_service.mapper.PatientMapper">
+
+
+    <select id="selectIdByOpenId" resultType="com.luojiawei.his_service.domain.dto.UserDTO">
+        select id, open_id, phone, name, verified, hospital_pid from patient where open_id = #{openId}
+    </select>
+
+    <select id="selectByPhone" resultType="com.luojiawei.his_service.domain.po.Patient" parameterType="java.lang.String">
+        select * from patient where phone = #{phone}
+    </select>
+</mapper>

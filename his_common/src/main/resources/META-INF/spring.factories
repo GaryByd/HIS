@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.luojiawei.common.config.CorsConfig,\
+    com.luojiawei.common.config.JsonConfig,\
+    com.luojiawei.common.config.MybatisConfig,\
+    com.luojiawei.common.config.RedisConfig,\
+    com.luojiawei.common.config.RedissonConfig
+
+

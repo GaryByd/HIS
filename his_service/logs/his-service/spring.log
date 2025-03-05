@@ -1,0 +1,11 @@
+18:43:19:515  INFO 31696 --- [main] com.luojiawei.VerifyUtilsTest            : Starting VerifyUtilsTest using Java 17.0.11 on luo with PID 31696 (started by 22407 in A:\Desktop\workspace\HIS\his_service)
+18:43:19:516 DEBUG 31696 --- [main] com.luojiawei.VerifyUtilsTest            : Running with Spring Boot v2.7.12, Spring v5.3.27
+18:43:19:516  INFO 31696 --- [main] com.luojiawei.VerifyUtilsTest            : The following 1 profile is active: "dev"
+18:43:22:469  INFO 31696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+18:43:22:476  INFO 31696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+18:43:22:554  INFO 31696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+18:43:25:670  INFO 31696 --- [main] org.redisson.Version                     : Redisson 3.17.7
+18:43:26:420  INFO 31696 --- [redisson-netty-2-9] o.r.c.pool.MasterPubSubConnectionPool    : 1 connections initialized for 111.230.32.147/111.230.32.147:9631
+18:43:27:125  INFO 31696 --- [redisson-netty-2-19] o.r.c.pool.MasterConnectionPool          : 24 connections initialized for 111.230.32.147/111.230.32.147:9631
+18:43:33:025  INFO 31696 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+18:43:33:111  INFO 31696 --- [main] com.luojiawei.VerifyUtilsTest            : Started VerifyUtilsTest in 14.338 seconds (JVM running for 16.758)
