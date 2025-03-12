@@ -1,7 +1,8 @@
 package com.luojiawei.his_service.mapper;
 
-import com.luojiawei.his_service.domain.po.AiModel;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.luojiawei.common.domain.po.AiModel;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

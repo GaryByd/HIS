@@ -1,10 +1,11 @@
 package com.luojiawei.his_service.controller;
 
 
-import com.luojiawei.his_service.domain.dto.Result;
-import com.luojiawei.his_service.domain.dto.UploadResponse;
-import com.luojiawei.his_service.domain.po.AiModel;
-import com.luojiawei.his_service.domain.vo.ApiResponse;
+
+import com.luojiawei.common.domain.dto.Result;
+import com.luojiawei.common.domain.dto.inner.UploadResponse;
+import com.luojiawei.common.domain.po.AiModel;
+import com.luojiawei.common.domain.vo.ApiResponse;
 import com.luojiawei.his_service.service.UploadService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -32,7 +33,7 @@ public class AiModelController {
      * 使用方式：通过Postman或表单上传文件
      */
     @PostMapping("info")
-    public ApiResponse<UploadResponse> testFileUpload(
+    public String testFileUpload(
             @RequestParam("file") MultipartFile file,
             @RequestHeader(value = "X-API-Key", required = false) String apiKey) {
         System.out.printf("收到文件上传请求，文件名:" + file.getName());

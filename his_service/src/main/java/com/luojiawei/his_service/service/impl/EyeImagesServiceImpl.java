@@ -1,6 +1,6 @@
 package com.luojiawei.his_service.service.impl;
 
-import com.luojiawei.his_service.domain.po.EyeImages;
+import com.luojiawei.common.domain.po.EyeImages;
 import com.luojiawei.his_service.mapper.EyeImagesMapper;
 import com.luojiawei.his_service.service.IEyeImagesService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

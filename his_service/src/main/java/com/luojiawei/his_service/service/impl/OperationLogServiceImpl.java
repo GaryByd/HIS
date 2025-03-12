@@ -1,6 +1,6 @@
 package com.luojiawei.his_service.service.impl;
 
-import com.luojiawei.his_service.domain.po.OperationLog;
+import com.luojiawei.common.domain.po.OperationLog;
 import com.luojiawei.his_service.mapper.OperationLogMapper;
 import com.luojiawei.his_service.service.IOperationLogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

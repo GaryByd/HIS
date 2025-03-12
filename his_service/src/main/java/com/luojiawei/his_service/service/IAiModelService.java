@@ -1,7 +1,8 @@
 package com.luojiawei.his_service.service;
 
-import com.luojiawei.his_service.domain.po.AiModel;
+
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.luojiawei.common.domain.po.AiModel;
 
 /**
  * <p>

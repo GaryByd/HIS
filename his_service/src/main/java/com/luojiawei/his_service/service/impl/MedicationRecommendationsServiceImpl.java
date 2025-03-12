@@ -1,6 +1,6 @@
 package com.luojiawei.his_service.service.impl;
 
-import com.luojiawei.his_service.domain.po.MedicationRecommendations;
+import com.luojiawei.common.domain.po.MedicationRecommendations;
 import com.luojiawei.his_service.mapper.MedicationRecommendationsMapper;
 import com.luojiawei.his_service.service.IMedicationRecommendationsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

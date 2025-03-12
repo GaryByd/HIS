@@ -3,11 +3,11 @@
 <mapper namespace="com.luojiawei.his_service.mapper.PatientMapper">
 
 
-    <select id="selectIdByOpenId" resultType="com.luojiawei.his_service.domain.dto.UserDTO">
+    <select id="selectIdByOpenId" resultType="com.luojiawei.common.domain.dto.UserDTO">
         select id, open_id, phone, name, verified, hospital_pid from patient where open_id = #{openId}
     </select>
 
-    <select id="selectByPhone" resultType="com.luojiawei.his_service.domain.po.Patient" parameterType="java.lang.String">
+    <select id="selectByPhone" resultType="com.luojiawei.common.domain.po.Patient" parameterType="java.lang.String">
         select * from patient where phone = #{phone}
     </select>
 </mapper>

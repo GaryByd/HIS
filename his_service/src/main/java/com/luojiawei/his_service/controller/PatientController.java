@@ -1,14 +1,16 @@
 package com.luojiawei.his_service.controller;
 
 
-import com.luojiawei.his_service.domain.dto.AuthDTO;
-import com.luojiawei.his_service.domain.dto.Result;
-import com.luojiawei.his_service.domain.vo.LoginVo;
+import com.luojiawei.common.domain.dto.AuthDTO;
+import com.luojiawei.common.domain.dto.Result;
+import com.luojiawei.common.domain.vo.LoginVo;
 import com.luojiawei.his_service.service.IPatientService;
-
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 

@@ -2,9 +2,11 @@ package com.luojiawei.his_service.mapper;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.luojiawei.his_service.domain.po.DiagnosisReport;
+import com.luojiawei.common.domain.po.DiagnosisReport;
+import com.luojiawei.common.domain.vo.Diagnosises;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.luojiawei.his_service.domain.vo.Diagnosises;
+
 import org.apache.ibatis.annotations.Mapper;
 
 /**

@@ -1,18 +1,19 @@
 package com.luojiawei.his_service.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.luojiawei.his_service.domain.dto.DiagnosisReportDetails;
-import com.luojiawei.his_service.domain.dto.Result;
-import com.luojiawei.his_service.domain.dto.inner.DoctorInfo;
-import com.luojiawei.his_service.domain.dto.inner.PatientInfo;
-import com.luojiawei.his_service.domain.po.*;
-import com.luojiawei.his_service.domain.vo.DiagnosisListVO;
-import com.luojiawei.his_service.domain.vo.Diagnosises;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.luojiawei.common.domain.dto.DiagnosisReportDetails;
+import com.luojiawei.common.domain.dto.Result;
+import com.luojiawei.common.domain.dto.inner.DoctorInfo;
+import com.luojiawei.common.domain.dto.inner.PatientInfo;
+import com.luojiawei.common.domain.po.*;
+import com.luojiawei.common.domain.vo.DiagnosisListVO;
+import com.luojiawei.common.domain.vo.Diagnosises;
+
 import com.luojiawei.his_service.mapper.*;
 import com.luojiawei.his_service.service.IDiagnosisReportService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -63,7 +64,7 @@ public class DiagnosisReportServiceImpl extends ServiceImpl<DiagnosisReportMappe
     }
 
     @Override
-    public Result<Object> diagnosisReport(Integer id) {
+    public Result<DiagnosisReportDetails> diagnosisReport(Integer id) {
         //先查询诊断报告是否有
         DiagnosisReport diagnosisReport = diagnosisReportMapper.selectById(id);
         if (diagnosisReport == null) {

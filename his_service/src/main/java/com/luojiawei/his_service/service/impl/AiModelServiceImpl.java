@@ -1,6 +1,7 @@
 package com.luojiawei.his_service.service.impl;
 
-import com.luojiawei.his_service.domain.po.AiModel;
+
+import com.luojiawei.common.domain.po.AiModel;
 import com.luojiawei.his_service.mapper.AiModelMapper;
 import com.luojiawei.his_service.service.IAiModelService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

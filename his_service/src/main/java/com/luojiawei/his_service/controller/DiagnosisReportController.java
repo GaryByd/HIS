@@ -1,13 +1,19 @@
 package com.luojiawei.his_service.controller;
 
 
-import com.luojiawei.his_service.domain.dto.Result;
-import com.luojiawei.his_service.domain.vo.DiagnosisListVO;
+import com.luojiawei.common.domain.dto.DiagnosisReportDetails;
+import com.luojiawei.common.domain.dto.Result;
+import com.luojiawei.common.domain.vo.DiagnosisListVO;
+
+import com.luojiawei.common.domain.vo.RecommendedQuestions;
+import com.luojiawei.common.domain.vo.inner.QuestionsVo;
+import com.luojiawei.his_service.enums.GeneralQuestions;
 import com.luojiawei.his_service.service.IDiagnosisReportService;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 /**
  * <p>
@@ -27,8 +33,7 @@ public class DiagnosisReportController {
     public Result<DiagnosisListVO> diagnosisReports(@RequestParam(value = "page") Integer pageNumber,
                                                     @RequestParam(value = "limit") Integer pageSize,
                                                     @RequestParam(value = "status",required = false) String status){
-        Result<DiagnosisListVO> diagnosisReports = diagnosisReportService.diagnosisReports(pageNumber, pageSize, status);
-        return diagnosisReports;
+        return diagnosisReportService.diagnosisReports(pageNumber, pageSize, status);
     }
 
     @ApiOperation(value = "分页获得历史diagnosises")
@@ -38,14 +43,26 @@ public class DiagnosisReportController {
                                                     @RequestParam(value = "start_date",required = false) String startDate,
                                                     @RequestParam(value = "end_date",required = false) String endDate,
                                                     @RequestParam(value = "status",required = false) String status){
-        Result<DiagnosisListVO> diagnosisReports = diagnosisReportService.diagnosisHistory(pageNumber, pageSize, startDate, endDate, status);
-        return diagnosisReports;
+        return diagnosisReportService.diagnosisHistory(pageNumber, pageSize, startDate, endDate, status);
     }
 
     @ApiOperation(value = "获得单个diagnosis细节")
     @GetMapping("/reports/{id}")
-    public Result<Object> diagnosisReport(@PathVariable("id") Integer id) {
-        Result<Object> diagnosisReport = diagnosisReportService.diagnosisReport(id);
-        return diagnosisReport;
+    public Result<DiagnosisReportDetails> diagnosisReport(@PathVariable("id") Integer id) {
+        return diagnosisReportService.diagnosisReport(id);
+    }
+
+    @ApiOperation(value = "返回一些通用问题")
+    @GetMapping("/{diagnosisId}/qa/questions")
+    public Result<RecommendedQuestions> getQuestions(@PathVariable("diagnosisId") Integer diagnosisId) {
+        //将枚举枚举的文件都放到RecommendedQuestions中
+        RecommendedQuestions recommendedQuestions = new RecommendedQuestions();
+        ArrayList<QuestionsVo> questions = new ArrayList<>();
+        for (GeneralQuestions generalQuestions : GeneralQuestions.values()) {
+            QuestionsVo q = new QuestionsVo(generalQuestions.getId(), generalQuestions.getQuestion(), generalQuestions.getCategory());
+            questions.add(q);
+        }
+        recommendedQuestions.setQuestions(questions);
+        return Result.ok(recommendedQuestions);
     }
 }

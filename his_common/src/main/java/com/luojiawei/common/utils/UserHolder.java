@@ -1,6 +1,6 @@
 package com.luojiawei.common.utils;
 
-import com.luojiawei.common.domain.UserDTO;
+import com.luojiawei.common.domain.dto.UserDTO;
 
 public class UserHolder {
     private static final ThreadLocal<UserDTO> tl = new ThreadLocal<>();

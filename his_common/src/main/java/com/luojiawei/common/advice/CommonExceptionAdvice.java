@@ -1,6 +1,6 @@
 package com.luojiawei.common.advice;
 
-import com.luojiawei.common.domain.R;
+import com.luojiawei.common.domain.dto.R;
 import com.luojiawei.common.exception.BadRequestException;
 import com.luojiawei.common.exception.CommonException;
 import com.luojiawei.common.exception.DbException;

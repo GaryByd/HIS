@@ -1,9 +1,12 @@
 package com.luojiawei.his_service.service;
 
-import com.luojiawei.his_service.domain.dto.Result;
-import com.luojiawei.his_service.domain.po.DiagnosisReport;
+
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.luojiawei.his_service.domain.vo.DiagnosisListVO;
+import com.luojiawei.common.domain.dto.DiagnosisReportDetails;
+import com.luojiawei.common.domain.dto.Result;
+import com.luojiawei.common.domain.po.DiagnosisReport;
+import com.luojiawei.common.domain.vo.DiagnosisListVO;
+
 
 /**
  * <p>
@@ -20,5 +23,5 @@ public interface IDiagnosisReportService extends IService<DiagnosisReport> {
 
     Result<DiagnosisListVO> diagnosisHistory(Integer pageNumber, Integer pageSize, String startDate, String endDate, String status);
 
-    Result<Object> diagnosisReport(Integer id);
+    Result<DiagnosisReportDetails> diagnosisReport(Integer id);
 }

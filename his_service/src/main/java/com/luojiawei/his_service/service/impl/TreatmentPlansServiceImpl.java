@@ -1,6 +1,7 @@
 package com.luojiawei.his_service.service.impl;
 
-import com.luojiawei.his_service.domain.po.TreatmentPlans;
+
+import com.luojiawei.common.domain.po.TreatmentPlans;
 import com.luojiawei.his_service.mapper.TreatmentPlansMapper;
 import com.luojiawei.his_service.service.ITreatmentPlansService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

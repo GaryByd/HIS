@@ -1,7 +1,7 @@
 package com.luojiawei.his_service.mapper;
 
-import com.luojiawei.his_service.domain.po.TreatmentPlans;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.luojiawei.common.domain.po.TreatmentPlans;
 
 /**
  * <p>

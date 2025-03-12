@@ -22,7 +22,7 @@ public interface FlaskModelAnalyzeClient {
             value = "/upload",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE
     )
-    ResponseEntity<String> uploadFile(
+    String uploadFile(
             @RequestPart("file") MultipartFile file,
             @RequestHeader("X-API-Key") String apiKey
     );

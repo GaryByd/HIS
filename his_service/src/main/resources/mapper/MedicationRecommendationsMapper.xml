@@ -3,7 +3,7 @@
 <mapper namespace="com.luojiawei.his_service.mapper.MedicationRecommendationsMapper">
 
     <select id="selectByDiagnosisId"
-            resultType="com.luojiawei.his_service.domain.po.MedicationRecommendations">
+            resultType="com.luojiawei.common.domain.po.MedicationRecommendations">
         select * from medication_recommendations where diagnosis_id = #{diagnosisId}
     </select>
 </mapper>

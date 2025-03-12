@@ -1,6 +1,7 @@
 package com.luojiawei.his_service.service.impl;
 
-import com.luojiawei.his_service.domain.po.DataAnalysis;
+
+import com.luojiawei.common.domain.po.DataAnalysis;
 import com.luojiawei.his_service.mapper.DataAnalysisMapper;
 import com.luojiawei.his_service.service.IDataAnalysisService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

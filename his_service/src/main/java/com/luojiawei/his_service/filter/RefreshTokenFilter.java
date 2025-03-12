@@ -5,7 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.jwt.JWT;
 import cn.hutool.jwt.JWTUtil;
 import cn.hutool.jwt.JWTValidator;
-import com.luojiawei.common.domain.UserDTO;
+import com.luojiawei.common.domain.dto.UserDTO;
 import com.luojiawei.common.utils.RedisConstants;
 import com.luojiawei.common.utils.UserHolder;
 import lombok.AllArgsConstructor;

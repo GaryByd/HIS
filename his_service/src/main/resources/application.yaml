@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: his-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 81.71.3.20
+        port: 8848
   profiles:
     active: dev
   datasource:
@@ -23,7 +28,7 @@ spring:
         time-between-eviction-runs: 10s
     database: 0
   jackson:
-    default-property-inclusion: non_null # JSON处理时忽略非空字段
+    default-property-inclusion: non_null
   main:
     allow-bean-definition-overriding: true
 
@@ -38,11 +43,28 @@ mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
 logging:
   level:
+    org.springframework.cloud.openfeign: DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG
+    org.springframework.cloud.client.loadbalancer: DEBUG
     com.luojiawei: debug
   pattern:
     dateformat: HH:mm:ss:SSS
   file:
     path: "logs/${spring.application.name}"
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 30000
+        loggerLevel: full
+      ai-doctor-service:
+        connectTimeout: 60000
+        readTimeout: 60000
+  okhttp:
+    enabled: true
+
 knife4j:
   enable: true
   openapi:

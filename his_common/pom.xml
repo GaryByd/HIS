@@ -13,6 +13,11 @@
     <name>his_common</name>
 
     <dependencies>
+        <!--负载均衡器-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
         <!-- JWT安全认证 -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

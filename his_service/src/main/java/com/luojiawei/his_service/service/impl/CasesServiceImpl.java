@@ -1,6 +1,7 @@
 package com.luojiawei.his_service.service.impl;
 
-import com.luojiawei.his_service.domain.po.Cases;
+
+import com.luojiawei.common.domain.po.Cases;
 import com.luojiawei.his_service.mapper.CasesMapper;
 import com.luojiawei.his_service.service.ICasesService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

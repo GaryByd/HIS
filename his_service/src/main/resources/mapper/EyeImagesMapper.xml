@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.luojiawei.his_service.mapper.EyeImagesMapper">
 
-    <select id="selectListByDiagnosisId" resultType="com.luojiawei.his_service.domain.po.EyeImages">
+    <select id="selectListByDiagnosisId" resultType="com.luojiawei.common.domain.po.EyeImages">
         select * from eye_images where dignosis_report_id = #{id}
     </select>
 </mapper>

@@ -1,7 +1,7 @@
 package com.luojiawei.his_service.service;
 
-import com.luojiawei.his_service.domain.po.MedicationRecommendations;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.luojiawei.common.domain.po.MedicationRecommendations;
 
 /**
  * <p>
