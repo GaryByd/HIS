@@ -12,7 +12,6 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class FeignMultipartSupportConfig {
-
     @Bean
     public Encoder feignFormEncoder() {
         return new SpringFormEncoder(new SpringEncoder(new ObjectFactory<>() {
@@ -24,7 +23,6 @@ public class FeignMultipartSupportConfig {
             }
         }));
     }
-
     @Bean
     public Logger.Level feignLoggerLevel() {
         return Logger.Level.FULL; // 开启详细日志
