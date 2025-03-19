@@ -2,6 +2,7 @@ package com.luojiawei.his_service.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.bean.copier.CopyOptions;
+import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 
 import com.luojiawei.common.domain.dto.AuthDTO;
@@ -10,19 +11,27 @@ import com.luojiawei.common.domain.dto.UserDTO;
 import com.luojiawei.common.domain.po.Patient;
 import com.luojiawei.common.domain.vo.AuthVo;
 import com.luojiawei.common.domain.vo.LoginVo;
+import com.luojiawei.common.utils.UserHolder;
 import com.luojiawei.his_service.mapper.PatientMapper;
 import com.luojiawei.his_service.service.IPatientService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.luojiawei.common.utils.JwtUtil;
 import com.luojiawei.his_service.utils.VerifyUtils;
 import com.luojiawei.common.utils.WeiChatUtil;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +44,7 @@ import static com.luojiawei.common.utils.RedisConstants.LOGIN_USER_TTL;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author 罗佳炜
@@ -44,10 +53,34 @@ import static com.luojiawei.common.utils.RedisConstants.LOGIN_USER_TTL;
 @Service
 @RequiredArgsConstructor
 public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> implements IPatientService {
-
-
+    // 配置连接池
+    private static HikariDataSource dataSource;
     private final StringRedisTemplate stringRedisTemplate;
     private final PatientMapper patientMapper;
+
+    static {
+        // 连接池配置
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:mysql://111.230.32.147:3306/yygh_user");
+        config.setUsername("root");
+        config.setPassword("4+K/D2zvxHooBhn5begcMQz/04IpAMpq");
+        config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+
+        // 连接池调优参数（根据实际情况调整）
+        config.setMaximumPoolSize(10);      // 最大连接数
+        config.setMinimumIdle(5);          // 最小空闲连接
+        config.setConnectionTimeout(30000); // 连接超时时间(毫秒)
+        config.setIdleTimeout(600000);     // 空闲连接超时时间(毫秒)
+        config.setMaxLifetime(1800000);    // 连接最大存活时间(毫秒)
+
+        // 其他优化配置
+        config.addDataSourceProperty("cachePrepStmts", "true");
+        config.addDataSourceProperty("prepStmtCacheSize", "250");
+        config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+
+        dataSource = new HikariDataSource(config);
+    }
+
     @Override
     public Result<LoginVo> login(String code, HttpSession session) {
         //解析code里面的code数据 json
@@ -69,12 +102,12 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> impl
             Patient patient = new Patient();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
             String timestamp = sdf.format(new Date());
-            patient.setName("用户"+timestamp);
+            patient.setName("用户" + timestamp);
             patient.setOpenId(openId);
             patientMapper.insert(patient);
         }
         // 5. 生成 token
-        String token = JwtUtil.createJWT(tokenId,openId,2592000000L);
+        String token = JwtUtil.createJWT(tokenId, openId, 2592000000L);
         // 6. 创建线程池
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(() -> {
@@ -91,7 +124,7 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> impl
         });
         // 关闭线程池
         // 10. 返回结果
-        return Result.ok("Success",new LoginVo(token, userDTO));
+        return Result.ok("Success", new LoginVo(token, userDTO));
     }
 
     @Override
@@ -101,36 +134,70 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> impl
         String idCard = authDTO.getIdCard();
         String phone = authDTO.getPhone();
         //根据phone查询用户信息
-        Patient patient = patientMapper.selectByPhone(phone);
-        if (patient == null) {
+        UserDTO user = UserHolder.getUser();
+
+        if (user == null) {
             return Result.fail("用户不存在");
         }
         //如果用户已经验证过了
-        if (patient.getVerified()==1) {
-            return Result.fail(403,"该用户已经验证过了");
+        if (user.getVerified()) {
+            return Result.fail(403, "该用户已经验证过了");
         }
+        Patient patient = patientMapper.selectById(user.getId());
         try {
             String responseBody = VerifyUtils.verifyIdentity(name, idCard);
-            //解析responseBody里面的respCode
+
+            // 解析responseBody里面的respCode
             if (!responseBody.contains("respCode")) {
                 return Result.fail("请求错误");
             }
-            String respCode = (String) JSONUtil.parse(responseBody).getByPath("respCode");
+
+            // 使用JSONUtil解析整个响应
+            JSONObject data = JSONUtil.parseObj(responseBody);
+            String respCode = data.getStr("respCode");
             if (!respCode.equals("0000")) {
                 AuthVo authVo = JSONUtil.toBean(responseBody, AuthVo.class);
                 return Result.ok("Fail", authVo);
             }
+            String certificatesNo = idCard; // 要查询的身份证号
+            // 使用try-with-resources自动关闭资源
+            try (Connection conn = dataSource.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(
+                         "SELECT * FROM patient WHERE certificates_no = ?")) {
+
+                stmt.setString(1, certificatesNo);
+
+                try (ResultSet rs = stmt.executeQuery()) {
+                    if (rs.next()) { // 移动游标到第一行
+                        int hospitalId = rs.getInt("id");
+                        System.out.println("ID: " + hospitalId);
+                        patient.setHospitalPid(String.valueOf(hospitalId));
+                    } else {
+                        // 如果结果集中没有数据，可以根据业务逻辑处理
+                        throw new RuntimeException("未找到匹配的记录！");
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException("数据库操作错误！"+e);
+            }
+            // 提取data中的字段并设置到patient对象
             patient.setVerified(1);
+            patient.setName(data.getStr("name")); // 设置姓名
+            patient.setIdCard(data.getStr("idNo")); // 设置身份证号
+            patient.setProvince(data.getStr("province")); // 设置省份
+            patient.setCity(data.getStr("city")); // 设置城市
+            patient.setCounty(data.getStr("county")); // 设置区县
+            patient.setBirthday(data.getStr("birthday")); // 设置生日
+            patient.setSex("M".equals(data.getStr("sex")) ? "男" : "女");
+            patient.setAge(Integer.parseInt(data.getStr("age"))); // 设置年龄
+            // 更新数据库
             patientMapper.updateById(patient);
-            //将responseBody转换为authVo
+
+            // 将responseBody转换为authVo
             AuthVo authVo = JSONUtil.toBean(responseBody, AuthVo.class);
             return Result.ok("Success", authVo);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
-
-
-
 }

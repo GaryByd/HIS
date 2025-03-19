@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -38,6 +39,7 @@ public class Doctor implements Serializable {
     private String phone;
 
     @ApiModelProperty(value = "身份证号")
+    @JsonProperty("id_card")
     private String idCard;
 
     @ApiModelProperty(value = "姓名")
@@ -47,19 +49,23 @@ public class Doctor implements Serializable {
     private Boolean verified;
 
     @ApiModelProperty(value = "审核人")
+    @JsonProperty("verified_by")
     private String verifiedBy;
 
     @ApiModelProperty(value = "审核时间")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("verified_time")
     private LocalDateTime verifiedTime;
 
     @ApiModelProperty(value = "执业编号")
     private String license;
 
     @ApiModelProperty(value = "科室")
+    @JsonProperty("department")
     private String department;
 
     @ApiModelProperty(value = "医院医生编号")
+    @JsonProperty("hospital_pid")
     private String hospitalPid;
 
 

@@ -22,5 +22,7 @@ public interface FlaskAiDoctorClient {
     String eye_doctor_chat(
            @RequestBody ChatForm chatForm
     );
+
+    
 }
 

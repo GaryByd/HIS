@@ -60,8 +60,8 @@ feign:
         readTimeout: 30000
         loggerLevel: full
       ai-doctor-service:
-        connectTimeout: 60000
-        readTimeout: 60000
+        connectTimeout: 6000000
+        readTimeout: 6000000
   okhttp:
     enabled: true
 

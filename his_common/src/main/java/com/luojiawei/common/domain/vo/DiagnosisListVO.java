@@ -9,9 +9,9 @@ import java.util.List;
 @Data
 public class DiagnosisListVO {
     private Integer total;
-    @JsonProperty("page")
-    private Integer pageSize;
     @JsonProperty("limit")
+    private Integer pageSize;
+    @JsonProperty("page")
     private Integer pageNumber;
     private List<Diagnosises> reports;
 }
