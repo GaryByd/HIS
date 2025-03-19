@@ -16,7 +16,7 @@ public class LoginVo {
         this.user.setId(Math.toIntExact(userDTO.getId()));
         this.user.setPhone(userDTO.getPhone());
         this.user.setName(userDTO.getName());
-        this.user.setVerified(userDTO.isVerified());
+        this.user.setVerified(userDTO.getVerified());
     }
 
     @Data

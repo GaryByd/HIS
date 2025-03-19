@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -37,23 +38,29 @@ public class TreatmentPlans implements Serializable {
 
     @ApiModelProperty(value = "关联DiagnosisReport表")
     @JsonIgnore
+    @JsonProperty("diagnosis_id")
     private Integer diagnosisId;
 
     @ApiModelProperty(value = "治疗类型（药物、手术、激光治疗等）")
+    @JsonProperty("treatment_type")
     private Integer treatmentType;
 
     @ApiModelProperty(value = "治疗方案详细信息")
+    @JsonProperty("treatment_detail")
     private String treatmentDetail;
 
     @ApiModelProperty(value = "治疗开始时间")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("start_time")
     private LocalDateTime startTime;
 
     @ApiModelProperty(value = "治疗结束时间")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("end_time")
     private LocalDateTime endDate;
 
     @ApiModelProperty(value = "关联Docker表")
+    @JsonIgnore
     private Integer doctorId;
 
     @ApiModelProperty(value = "创建时间")

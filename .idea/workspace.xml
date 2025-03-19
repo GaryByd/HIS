@@ -4,43 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="716aed89-85d9-47d5-bf2a-35c10fd7694a" name="Changes" comment="Add FlaskUploadClient interface for file upload functionality">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="716aed89-85d9-47d5-bf2a-35c10fd7694a" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;his_api/pom.xml&#10;#&#9;his_api/src/main/java/com/luojiawei/api/fallback/FlaskUploadFallbackFactory.java&#10;#&#9;his_common/pom.xml&#10;#&#9;his_common/src/main/java/com/luojiawei/common/advice/CommonExceptionAdvice.java&#10;#&#9;his_common/src/main/java/com/luojiawei/common/utils/UserHolder.java&#10;#&#9;his_service/pom.xml&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/AiModelController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/DiagnosisReportController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/PatientController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/filter/RefreshTokenFilter.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/AiModelMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/CasesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DataAnalysisMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DiagnosisReportMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DoctorMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/EyeImagesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/MedicationRecommendationsMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/OperationLogMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/PatientMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/TreatmentPlansMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IAiModelService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ICasesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDataAnalysisService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDiagnosisReportService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDoctorService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IEyeImagesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IMedicationRecommendationsService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IOperationLogService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IPatientService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ITreatmentPlansService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/UploadService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/AiModelServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/CasesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DataAnalysisServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DiagnosisReportServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DoctorServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/EyeImagesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/MedicationRecommendationsServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/OperationLogServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/PatientServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/TreatmentPlansServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/UploadServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/utils/UserHolder.java&#10;#&#9;his_service/src/main/resources/application-dev.yaml&#10;#&#9;his_service/src/main/resources/application.yaml&#10;#&#9;his_service/src/main/resources/mapper/DiagnosisReportMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/EyeImagesMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/MedicationRecommendationsMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/PatientMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/TreatmentPlansMapper.xml&#10;#&#9;logs/his-service/spring.log">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/his_api/src/main/java/com/luojiawei/api/config/FeignMultipartSupportConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_api/src/main/java/com/luojiawei/api/config/FeignMultipartSupportConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/his_common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/his_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/his_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/controller/AiModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/controller/AiModelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_api/src/main/java/com/luojiawei/api/client/FlaskAiDoctorClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_api/src/main/java/com/luojiawei/api/client/FlaskAiDoctorClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_api/src/main/java/com/luojiawei/api/client/FlaskUploadClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/dto/QuestionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/dto/QuestionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/AiModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/AiModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/Cases.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/Cases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/DataAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/DataAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/DiagnosisReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/DiagnosisReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/EyeImages.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/EyeImages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/MedicationRecommendations.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/MedicationRecommendations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/OperationLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/OperationLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/TreatmentPlans.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/po/TreatmentPlans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/vo/DiagnosisListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/vo/DiagnosisListVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/vo/Diagnosises.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/vo/Diagnosises.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/vo/LoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_common/src/main/java/com/luojiawei/common/domain/vo/LoginVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/config/FilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/config/FilterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/service/impl/PatientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/his_service/src/main/java/com/luojiawei/his_service/service/impl/PatientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/his_service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/his_service/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/his-service/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/his-service/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/his-service/spring.log.2025-03-01.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/his-service/spring.log.2025-03-02.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/his-service/spring.log.2025-03-04.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/model-service/spring.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/java/com/luojiawei/model/ModelServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/java/com/luojiawei/model/controller/ModelController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/java/com/luojiawei/model/domain/dto/ApiResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/java/com/luojiawei/model/domain/po/UploadResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/java/com/luojiawei/model/mapper/UploadMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/java/com/luojiawei/model/service/UploadService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/java/com/luojiawei/model/service/impl/UploadServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/resources/application-dev.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/resources/application-local.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/main/resources/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-service/src/test/java/com/luojiawei/model/DemoApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/mapper/AiModelMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/po/AiModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/service/AiModelService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/service/impl/AiModelServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/domain/mapper/AiModelMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/his-service/spring.log.2025-03-09.0.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,47 +76,64 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.HIS [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.HIS [org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.HIS [org.apache.maven.plugins:maven-deploy-plugin:2.8.2:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.HIS [org.apache.maven.plugins:maven-install-plugin:2.5.2:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.HIS [org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.HIS [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_common [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_common [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_common [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_common [org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_common [org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_common [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_service [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_service [org.apache.maven.plugins:maven-install-plugin:2.5.2:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.his_service [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.HisServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.HIS [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.HIS [org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy].executor": "Run",
+    "Maven.HIS [org.apache.maven.plugins:maven-deploy-plugin:2.8.2:help].executor": "Run",
+    "Maven.HIS [org.apache.maven.plugins:maven-install-plugin:2.5.2:help].executor": "Run",
+    "Maven.HIS [org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file].executor": "Run",
+    "Maven.HIS [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor": "Run",
+    "Maven.his_common [clean].executor": "Run",
+    "Maven.his_common [install].executor": "Run",
+    "Maven.his_common [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.his_common [org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile].executor": "Run",
+    "Maven.his_common [org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy].executor": "Run",
+    "Maven.his_common [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor": "Run",
+    "Maven.his_service [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.his_service [org.apache.maven.plugins:maven-install-plugin:2.5.2:help].executor": "Run",
+    "Maven.his_service [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.HisServiceApplication (1).executor": "Debug",
+    "Spring Boot.HisServiceApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.HisServiceApplication">
+    <configuration name="HisServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="his_service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.luojiawei.his_service.HisServiceApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=8081" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HisServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="his_service" />
@@ -134,6 +142,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.HisServiceApplication (1)" />
+      <item itemvalue="Spring Boot.HisServiceApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -154,7 +166,12 @@
       <workItem from="1741875559542" duration="195000" />
       <workItem from="1741917811471" duration="4642000" />
       <workItem from="1741936247412" duration="4741000" />
-      <workItem from="1741942230515" duration="364000" />
+      <workItem from="1741942230515" duration="579000" />
+      <workItem from="1741952496142" duration="909000" />
+      <workItem from="1742020708744" duration="403000" />
+      <workItem from="1742095009981" duration="15153000" />
+      <workItem from="1742216678391" duration="2000" />
+      <workItem from="1742387866214" duration="7880000" />
     </task>
     <task id="LOCAL-00001" summary="Add FlaskUploadClient interface for file upload functionality">
       <option name="closed" value="true" />
@@ -172,7 +189,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741875605743</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;his_api/pom.xml&#10;#&#9;his_api/src/main/java/com/luojiawei/api/fallback/FlaskUploadFallbackFactory.java&#10;#&#9;his_common/pom.xml&#10;#&#9;his_common/src/main/java/com/luojiawei/common/advice/CommonExceptionAdvice.java&#10;#&#9;his_common/src/main/java/com/luojiawei/common/utils/UserHolder.java&#10;#&#9;his_service/pom.xml&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/AiModelController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/DiagnosisReportController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/PatientController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/filter/RefreshTokenFilter.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/AiModelMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/CasesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DataAnalysisMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DiagnosisReportMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DoctorMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/EyeImagesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/MedicationRecommendationsMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/OperationLogMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/PatientMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/TreatmentPlansMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IAiModelService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ICasesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDataAnalysisService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDiagnosisReportService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDoctorService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IEyeImagesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IMedicationRecommendationsService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IOperationLogService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IPatientService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ITreatmentPlansService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/UploadService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/AiModelServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/CasesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DataAnalysisServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DiagnosisReportServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DoctorServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/EyeImagesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/MedicationRecommendationsServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/OperationLogServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/PatientServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/TreatmentPlansServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/UploadServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/utils/UserHolder.java&#10;#&#9;his_service/src/main/resources/application-dev.yaml&#10;#&#9;his_service/src/main/resources/application.yaml&#10;#&#9;his_service/src/main/resources/mapper/DiagnosisReportMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/EyeImagesMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/MedicationRecommendationsMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/PatientMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/TreatmentPlansMapper.xml&#10;#&#9;logs/his-service/spring.log">
+      <option name="closed" value="true" />
+      <created>1741942615164</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741942615164</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;his_api/pom.xml&#10;#&#9;his_api/src/main/java/com/luojiawei/api/fallback/FlaskUploadFallbackFactory.java&#10;#&#9;his_common/pom.xml&#10;#&#9;his_common/src/main/java/com/luojiawei/common/advice/CommonExceptionAdvice.java&#10;#&#9;his_common/src/main/java/com/luojiawei/common/utils/UserHolder.java&#10;#&#9;his_service/pom.xml&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/AiModelController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/DiagnosisReportController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/PatientController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/filter/RefreshTokenFilter.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/AiModelMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/CasesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DataAnalysisMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DiagnosisReportMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DoctorMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/EyeImagesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/MedicationRecommendationsMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/OperationLogMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/PatientMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/TreatmentPlansMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IAiModelService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ICasesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDataAnalysisService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDiagnosisReportService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDoctorService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IEyeImagesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IMedicationRecommendationsService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IOperationLogService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IPatientService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ITreatmentPlansService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/UploadService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/AiModelServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/CasesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DataAnalysisServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DiagnosisReportServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DoctorServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/EyeImagesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/MedicationRecommendationsServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/OperationLogServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/PatientServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/TreatmentPlansServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/UploadServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/utils/UserHolder.java&#10;#&#9;his_service/src/main/resources/application-dev.yaml&#10;#&#9;his_service/src/main/resources/application.yaml&#10;#&#9;his_service/src/main/resources/mapper/DiagnosisReportMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/EyeImagesMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/MedicationRecommendationsMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/PatientMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/TreatmentPlansMapper.xml&#10;#&#9;logs/his-service/spring.log">
+      <option name="closed" value="true" />
+      <created>1741942621362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741942621362</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +213,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add FlaskUploadClient interface for file upload functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add FlaskUploadClient interface for file upload functionality" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;his_api/pom.xml&#10;#&#9;his_api/src/main/java/com/luojiawei/api/fallback/FlaskUploadFallbackFactory.java&#10;#&#9;his_common/pom.xml&#10;#&#9;his_common/src/main/java/com/luojiawei/common/advice/CommonExceptionAdvice.java&#10;#&#9;his_common/src/main/java/com/luojiawei/common/utils/UserHolder.java&#10;#&#9;his_service/pom.xml&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/AiModelController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/DiagnosisReportController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/PatientController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/filter/RefreshTokenFilter.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/AiModelMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/CasesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DataAnalysisMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DiagnosisReportMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DoctorMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/EyeImagesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/MedicationRecommendationsMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/OperationLogMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/PatientMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/TreatmentPlansMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IAiModelService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ICasesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDataAnalysisService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDiagnosisReportService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDoctorService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IEyeImagesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IMedicationRecommendationsService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IOperationLogService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IPatientService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ITreatmentPlansService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/UploadService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/AiModelServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/CasesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DataAnalysisServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DiagnosisReportServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DoctorServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/EyeImagesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/MedicationRecommendationsServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/OperationLogServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/PatientServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/TreatmentPlansServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/UploadServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/utils/UserHolder.java&#10;#&#9;his_service/src/main/resources/application-dev.yaml&#10;#&#9;his_service/src/main/resources/application.yaml&#10;#&#9;his_service/src/main/resources/mapper/DiagnosisReportMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/EyeImagesMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/MedicationRecommendationsMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/PatientMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/TreatmentPlansMapper.xml&#10;#&#9;logs/his-service/spring.log" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;his_api/pom.xml&#10;#&#9;his_api/src/main/java/com/luojiawei/api/fallback/FlaskUploadFallbackFactory.java&#10;#&#9;his_common/pom.xml&#10;#&#9;his_common/src/main/java/com/luojiawei/common/advice/CommonExceptionAdvice.java&#10;#&#9;his_common/src/main/java/com/luojiawei/common/utils/UserHolder.java&#10;#&#9;his_service/pom.xml&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/AiModelController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/DiagnosisReportController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/controller/PatientController.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/filter/RefreshTokenFilter.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/AiModelMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/CasesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DataAnalysisMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DiagnosisReportMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/DoctorMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/EyeImagesMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/MedicationRecommendationsMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/OperationLogMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/PatientMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/mapper/TreatmentPlansMapper.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IAiModelService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ICasesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDataAnalysisService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDiagnosisReportService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IDoctorService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IEyeImagesService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IMedicationRecommendationsService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IOperationLogService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/IPatientService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/ITreatmentPlansService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/UploadService.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/AiModelServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/CasesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DataAnalysisServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DiagnosisReportServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/DoctorServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/EyeImagesServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/MedicationRecommendationsServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/OperationLogServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/PatientServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/TreatmentPlansServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/service/impl/UploadServiceImpl.java&#10;#&#9;his_service/src/main/java/com/luojiawei/his_service/utils/UserHolder.java&#10;#&#9;his_service/src/main/resources/application-dev.yaml&#10;#&#9;his_service/src/main/resources/application.yaml&#10;#&#9;his_service/src/main/resources/mapper/DiagnosisReportMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/EyeImagesMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/MedicationRecommendationsMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/PatientMapper.xml&#10;#&#9;his_service/src/main/resources/mapper/TreatmentPlansMapper.xml&#10;#&#9;logs/his-service/spring.log" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

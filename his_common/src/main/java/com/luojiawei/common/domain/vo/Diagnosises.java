@@ -10,7 +10,7 @@ public class Diagnosises {
         private String diseaseName;
         @JsonProperty("disease_category")
         private String diseaseCategory;
-        @JsonProperty("disease_description")
+        @JsonProperty("create_time")
         private String createTime;
         @JsonProperty("status")
         private String status;

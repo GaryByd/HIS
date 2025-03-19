@@ -10,6 +10,7 @@ import com.luojiawei.common.domain.dto.UserDTO;
 import com.luojiawei.common.domain.po.Patient;
 import com.luojiawei.common.domain.vo.AuthVo;
 import com.luojiawei.common.domain.vo.LoginVo;
+import com.luojiawei.common.utils.UserHolder;
 import com.luojiawei.his_service.mapper.PatientMapper;
 import com.luojiawei.his_service.service.IPatientService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -101,14 +102,16 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> impl
         String idCard = authDTO.getIdCard();
         String phone = authDTO.getPhone();
         //根据phone查询用户信息
-        Patient patient = patientMapper.selectByPhone(phone);
-        if (patient == null) {
+        UserDTO user = UserHolder.getUser();
+
+        if (user == null) {
             return Result.fail("用户不存在");
         }
         //如果用户已经验证过了
-        if (patient.getVerified()==1) {
+        if (user.getVerified()) {
             return Result.fail(403,"该用户已经验证过了");
         }
+        Patient patient = patientMapper.selectById(user.getId());
         try {
             String responseBody = VerifyUtils.verifyIdentity(name, idCard);
             //解析responseBody里面的respCode

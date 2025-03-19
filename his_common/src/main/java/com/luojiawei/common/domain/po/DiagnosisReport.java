@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -32,34 +33,43 @@ public class DiagnosisReport implements Serializable {
 
     @ApiModelProperty(value = "主键ID")
     @TableId(value = "id", type = IdType.AUTO)
+    @JsonProperty("id")
     private Integer id;
 
     @ApiModelProperty(value = "患者ID")
+    @JsonProperty("patient_id")
     private Integer patientId;
 
     @ApiModelProperty(value = "医生ID")
+    @JsonProperty("doctor_id")
     private Integer doctorId;
 
     @ApiModelProperty(value = "眼疾名称")
+    @JsonProperty("disease_name")
     private String diseaseName;
 
     @ApiModelProperty(value = "眼疾分类")
+    @JsonProperty("disease_category")
     private String diseaseCategory;
 
     @ApiModelProperty(value = "AI模型版本ID")
+    @JsonProperty("aimodel_id")
     private Integer aimodelId;
 
     @ApiModelProperty(value = "AI诊断结果")
+    @JsonProperty("result")
     private String result;
 
     @ApiModelProperty(value = "创建时间")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("create_time")
     private LocalDateTime createTime;
 
     @ApiModelProperty(value = "confirmed/archived")
     private String status;
 
     @ApiModelProperty(value = "病人身份证号")
+    @JsonProperty("id_card")
     private String idCard;
 
     @ApiModelProperty(value = "病人名称")

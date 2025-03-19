@@ -12,4 +12,9 @@ public class QuestionForm {
     @JsonProperty("previous_conversations")
     private ArrayList<DialogueInfo> dialogueInfoList;
     private String question;
+    private boolean stream=false;
+
+    public boolean getStream() {
+        return stream;
+    }
 }
