@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Configuration;
 public class FilterConfig {
     private final RefreshTokenFilter refreshTokenFilter;
 
-//    @Bean
-//    public FilterRegistrationBean<RefreshTokenFilter> refreshTokenFilterBean() {
-//        FilterRegistrationBean<RefreshTokenFilter> registrationBean = new FilterRegistrationBean<>();
-//        registrationBean.setFilter(refreshTokenFilter); // 这里使用已经注入的 Bean
-//        registrationBean.addUrlPatterns("/*");
-//        registrationBean.setOrder(0); // 设置过滤器的顺序
-//        return registrationBean;
-//    }
+    @Bean
+    public FilterRegistrationBean<RefreshTokenFilter> refreshTokenFilterBean() {
+        FilterRegistrationBean<RefreshTokenFilter> registrationBean = new FilterRegistrationBean<>();
+        registrationBean.setFilter(refreshTokenFilter); // 这里使用已经注入的 Bean
+        registrationBean.addUrlPatterns("/*");
+        registrationBean.setOrder(0); // 设置过滤器的顺序
+        return registrationBean;
+    }
 }

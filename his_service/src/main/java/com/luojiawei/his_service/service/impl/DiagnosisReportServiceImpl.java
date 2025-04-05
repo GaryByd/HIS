@@ -72,10 +72,16 @@ public class DiagnosisReportServiceImpl extends ServiceImpl<DiagnosisReportMappe
         }
         //构建PatientInfo 通过diagnosis的id构建Patinet_info
         Patient patient = patientMapper.selectById(diagnosisReport.getPatientId());
+        if(patient == null){
+            return Result.fail("该患者不存在！");
+        }
         PatientInfo patientInfo = new PatientInfo(patient.getName(),patient.getIdCard());
 
         //构建DoctorInfo 通过diagnosis的DoctorId构建Doctor_info
         Doctor doctor = doctorMapper.selectById(diagnosisReport.getDoctorId());
+        if(doctor == null){
+            return Result.fail("诊断报告错误,医生不存在！");
+        }
         DoctorInfo doctorInfo = new DoctorInfo(doctor.getId(), doctor.getName(),doctor.getDepartment());
 
         //构建eye_images 通过诊断报告的id查询出所有的图片
@@ -94,8 +100,8 @@ public class DiagnosisReportServiceImpl extends ServiceImpl<DiagnosisReportMappe
                 diagnosisReport.getId(),
                 patientInfo,
                 doctorInfo,
-                diagnosisReport.getDiseaseName(),
-                diagnosisReport.getDiseaseCategory(),
+                diagnosisReport.getResult(),
+                diagnosisReport.getResult(),
                 diagnosisReport.getResult(),
                 diagnosisReport.getCreateTime(),
                 diagnosisReport.getStatus(),
@@ -106,7 +112,6 @@ public class DiagnosisReportServiceImpl extends ServiceImpl<DiagnosisReportMappe
                 medicine,
                 aiModel
         );
-
         return Result.ok(diagnosisReportDetails);
     }
 }

@@ -6,6 +6,7 @@ import com.luojiawei.common.domain.dto.AuthDTO;
 import com.luojiawei.common.domain.dto.Result;
 import com.luojiawei.common.domain.po.Patient;
 import com.luojiawei.common.domain.vo.LoginVo;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
 
@@ -19,8 +20,10 @@ import javax.servlet.http.HttpSession;
  */
 public interface IPatientService extends IService<Patient> {
 
+    @Transactional
     Result<LoginVo> login(String code, HttpSession session);
 
+    @Transactional
     Result<Object> Verify(AuthDTO authDTO, HttpSession session);
 
 }

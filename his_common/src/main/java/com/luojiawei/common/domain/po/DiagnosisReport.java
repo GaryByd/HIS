@@ -44,14 +44,6 @@ public class DiagnosisReport implements Serializable {
     @JsonProperty("doctor_id")
     private Integer doctorId;
 
-    @ApiModelProperty(value = "眼疾名称")
-    @JsonProperty("disease_name")
-    private String diseaseName;
-
-    @ApiModelProperty(value = "眼疾分类")
-    @JsonProperty("disease_category")
-    private String diseaseCategory;
-
     @ApiModelProperty(value = "AI模型版本ID")
     @JsonProperty("aimodel_id")
     private Integer aimodelId;

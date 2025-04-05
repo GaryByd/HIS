@@ -56,8 +56,8 @@ feign:
   client:
     config:
       default:
-        connectTimeout: 5000
-        readTimeout: 30000
+        connectTimeout: 6000000
+        readTimeout: 6000000
         loggerLevel: full
       ai-doctor-service:
         connectTimeout: 6000000
@@ -79,3 +79,20 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.luojiawei.service.controller
+
+hospital:
+  datasource:
+    jdbc-url: jdbc:mysql://111.230.32.147:3306/yygh_user
+    username: root
+    password: 4+K/D2zvxHooBhn5begcMQz/04IpAMpq
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    maximum-pool-size: 10
+    minimum-idle: 5
+    connection-timeout: 30000
+    idle-timeout: 600000
+    max-lifetime: 1800000
+    cache-prep-stmts: true
+    prep-stmt-cache-size: 250
+    prep-stmt-cache-sql-limit: 2048
+    patient-table: patient
+    certificates-no-column: certificates_no

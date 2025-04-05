@@ -5,11 +5,10 @@
         <!-- 使用别名简化表名 -->
         SELECT
         d.id,
-        d.disease_name,
-        d.disease_category,
         d.create_time,
         d.status,
         d.name,
+        d.result,
         a.version
         FROM
         diagnosis_report d
@@ -32,6 +31,7 @@
         d.disease_category,
         d.create_time,
         d.status,
+        d.result,
         d2.name,
         a.version AS model_version
         FROM

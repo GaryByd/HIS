@@ -12,6 +12,7 @@ import com.luojiawei.common.domain.po.Patient;
 import com.luojiawei.common.domain.vo.AuthVo;
 import com.luojiawei.common.domain.vo.LoginVo;
 import com.luojiawei.common.utils.UserHolder;
+import com.luojiawei.his_service.config.HospitalSetting;
 import com.luojiawei.his_service.mapper.PatientMapper;
 import com.luojiawei.his_service.service.IPatientService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -21,6 +22,7 @@ import com.luojiawei.common.utils.WeiChatUtil;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -53,32 +55,35 @@ import static com.luojiawei.common.utils.RedisConstants.LOGIN_USER_TTL;
 @Service
 @RequiredArgsConstructor
 public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> implements IPatientService {
-    // 配置连接池
     private static HikariDataSource dataSource;
+    private static String patientTable;
+    private static String certificatesNoColumn;
+
     private final StringRedisTemplate stringRedisTemplate;
     private final PatientMapper patientMapper;
 
+
     static {
-        // 连接池配置
+        HospitalSetting hospitalSetting = new HospitalSetting();
+        // 新增：从 HospitalSetting 中加载配置
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mysql://111.230.32.147:3306/yygh_user");
-        config.setUsername("root");
-        config.setPassword("4+K/D2zvxHooBhn5begcMQz/04IpAMpq");
-        config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-
-        // 连接池调优参数（根据实际情况调整）
-        config.setMaximumPoolSize(10);      // 最大连接数
-        config.setMinimumIdle(5);          // 最小空闲连接
-        config.setConnectionTimeout(30000); // 连接超时时间(毫秒)
-        config.setIdleTimeout(600000);     // 空闲连接超时时间(毫秒)
-        config.setMaxLifetime(1800000);    // 连接最大存活时间(毫秒)
-
-        // 其他优化配置
-        config.addDataSourceProperty("cachePrepStmts", "true");
-        config.addDataSourceProperty("prepStmtCacheSize", "250");
-        config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-
+        config.setJdbcUrl(hospitalSetting.getJdbcUrl());
+        config.setUsername(hospitalSetting.getUsername());
+        config.setPassword(hospitalSetting.getPassword());
+        config.setDriverClassName(hospitalSetting.getDriverClassName());
+        config.setMaximumPoolSize(hospitalSetting.getMaximumPoolSize());
+        config.setMinimumIdle(hospitalSetting.getMinimumIdle());
+        config.setConnectionTimeout(hospitalSetting.getConnectionTimeout());
+        config.setIdleTimeout(hospitalSetting.getIdleTimeout());
+        config.setMaxLifetime(hospitalSetting.getMaxLifetime());
+        config.addDataSourceProperty("cachePrepStmts", String.valueOf(hospitalSetting.isCachePrepStmts()));
+        config.addDataSourceProperty("prepStmtCacheSize", String.valueOf(hospitalSetting.getPrepStmtCacheSize()));
+        config.addDataSourceProperty("prepStmtCacheSqlLimit", String.valueOf(hospitalSetting.getPrepStmtCacheSqlLimit()));
         dataSource = new HikariDataSource(config);
+
+        // 新增：加载表名和查询参数
+        patientTable = hospitalSetting.getPatientTable();
+        certificatesNoColumn = hospitalSetting.getCertificatesNoColumn();
     }
 
     @Override
@@ -163,10 +168,8 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> impl
             // 使用try-with-resources自动关闭资源
             try (Connection conn = dataSource.getConnection();
                  PreparedStatement stmt = conn.prepareStatement(
-                         "SELECT * FROM patient WHERE certificates_no = ?")) {
-
+                         "SELECT * FROM " + patientTable + " WHERE " + certificatesNoColumn + " = ?")) {
                 stmt.setString(1, certificatesNo);
-
                 try (ResultSet rs = stmt.executeQuery()) {
                     if (rs.next()) { // 移动游标到第一行
                         int hospitalId = rs.getInt("id");
@@ -178,9 +181,11 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> impl
                     }
                 }
             } catch (SQLException e) {
-                throw new RuntimeException("数据库操作错误！"+e);
+                throw new RuntimeException("数据库操作错误！" + e);
             }
             // 提取data中的字段并设置到patient对象
+            patient.setPhone(phone); // 设置手机号
+            patient.setVerifiedBy("阿里云系统");
             patient.setVerified(1);
             patient.setName(data.getStr("name")); // 设置姓名
             patient.setIdCard(data.getStr("idNo")); // 设置身份证号
@@ -190,6 +195,7 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> impl
             patient.setBirthday(data.getStr("birthday")); // 设置生日
             patient.setSex("M".equals(data.getStr("sex")) ? "男" : "女");
             patient.setAge(Integer.parseInt(data.getStr("age"))); // 设置年龄
+            patient.setVerifiedTime(LocalDateTime.now()); // 设置验证时间
             // 更新数据库
             patientMapper.updateById(patient);
 

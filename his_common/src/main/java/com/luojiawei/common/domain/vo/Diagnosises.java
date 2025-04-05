@@ -6,10 +6,8 @@ import lombok.Data;
 @Data
 public class Diagnosises {
         private Integer id;
-        @JsonProperty("disease_name")
-        private String diseaseName;
-        @JsonProperty("disease_category")
-        private String diseaseCategory;
+        @JsonProperty("result")
+        private String result;
         @JsonProperty("create_time")
         private String createTime;
         @JsonProperty("status")
