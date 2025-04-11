@@ -1594,3 +1594,46 @@ org.apache.ibatis.binding.BindingException: Parameter 'patientId' not found. Ava
 15:25:00:007  INFO 29276 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
 15:25:00:030  INFO 29276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 15:25:00:458  INFO 29276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+15:25:04:550  INFO 29424 --- [main] c.l.his_service.HisServiceApplication    : Starting HisServiceApplication using Java 17.0.11 on luo with PID 29424 (A:\Desktop\repos_git\HIS\his_service\target\classes started by 22407 in A:\Desktop\repos_git\HIS)
+15:25:04:551 DEBUG 29424 --- [main] c.l.his_service.HisServiceApplication    : Running with Spring Boot v2.7.12, Spring v5.3.27
+15:25:04:552  INFO 29424 --- [main] c.l.his_service.HisServiceApplication    : The following 1 profile is active: "dev"
+15:25:05:279 DEBUG 29424 --- [main] o.s.c.openfeign.FeignClientsRegistrar$1  : Identified candidate component class: file [A:\Desktop\repos_git\HIS\his_api\target\classes\com\luojiawei\api\client\FastAPIAiDoctorClient.class]
+15:25:05:279 DEBUG 29424 --- [main] o.s.c.openfeign.FeignClientsRegistrar$1  : Identified candidate component class: file [A:\Desktop\repos_git\HIS\his_api\target\classes\com\luojiawei\api\client\FlaskModelAnalyzeClient.class]
+15:25:05:616  INFO 29424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+15:25:05:618  INFO 29424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+15:25:05:646  INFO 29424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+15:25:05:918  INFO 29424 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=950772db-613b-32ea-8b5e-bc41158f3d13
+15:25:06:554  INFO 29424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+15:25:06:563  INFO 29424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+15:25:06:563  INFO 29424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+15:25:06:735  INFO 29424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+15:25:06:735  INFO 29424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2135 ms
+15:25:07:182  INFO 29424 --- [main] org.redisson.Version                     : Redisson 3.17.7
+15:25:07:665  INFO 29424 --- [redisson-netty-2-9] o.r.c.pool.MasterPubSubConnectionPool    : 1 connections initialized for 111.230.32.147/111.230.32.147:9631
+15:25:08:626  INFO 29424 --- [redisson-netty-2-19] o.r.c.pool.MasterConnectionPool          : 24 connections initialized for 111.230.32.147/111.230.32.147:9631
+15:25:08:966 DEBUG 29424 --- [main] c.l.h.filter.RefreshTokenFilter          : Filter 'refreshTokenFilter' configured for use
+15:25:09:824  INFO 29424 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'flask-service' URL not provided. Will try picking an instance via load-balancing.
+15:25:10:159  INFO 29424 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'ai-doctor-service' URL not provided. Will try picking an instance via load-balancing.
+15:25:10:172  INFO 29424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+15:25:10:876  INFO 29424 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@613a608e
+15:25:10:878  INFO 29424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+15:25:12:388  WARN 29424 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+15:25:12:393  INFO 29424 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+15:25:12:475  INFO 29424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+15:25:12:514  INFO 29424 --- [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+15:25:12:515  INFO 29424 --- [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+15:25:13:583  INFO 29424 --- [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to get current node abilities...
+15:25:13:585  INFO 29424 --- [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+15:25:13:585  INFO 29424 --- [main] c.a.n.c.a.AbstractAbilityControlManager  : Initialize current abilities finish...
+15:25:13:586  INFO 29424 --- [main] c.a.n.c.a.d.NacosAbilityManagerHolder    : [AbilityControlManager] Successfully initialize AbilityControlManager
+15:25:13:713  INFO 29424 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP his-service 10.21.93.70:8848 register finished
+15:25:14:008  INFO 29424 --- [main] c.l.his_service.HisServiceApplication    : Started HisServiceApplication in 10.364 seconds (JVM running for 11.398)
+15:25:14:153  INFO 29424 --- [RMI TCP Connection(3)-10.21.93.70] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+15:25:14:198  INFO 29424 --- [RMI TCP Connection(5)-10.21.93.70] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:25:14:198  INFO 29424 --- [RMI TCP Connection(5)-10.21.93.70] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+15:25:14:201  INFO 29424 --- [RMI TCP Connection(5)-10.21.93.70] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+15:25:14:619  INFO 29424 --- [RMI TCP Connection(3)-10.21.93.70] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e24c795
+15:25:14:623  INFO 29424 --- [RMI TCP Connection(3)-10.21.93.70] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+15:25:24:510 DEBUG 29424 --- [http-nio-8080-exec-2] c.l.h.m.D.getDiagnosisList               : ==>  Preparing: SELECT d.id, d.create_time, d.status, d.name, d.result, a.version FROM diagnosis_report d JOIN ai_model a ON d.aimodel_id = a.id WHERE d.patient_id = ? ORDER BY d.create_time DESC
+15:25:24:557 DEBUG 29424 --- [http-nio-8080-exec-2] c.l.h.m.D.getDiagnosisList               : ==> Parameters: 4(Long)
+15:25:24:652 DEBUG 29424 --- [http-nio-8080-exec-2] c.l.h.m.D.getDiagnosisList               : <==      Total: 15
