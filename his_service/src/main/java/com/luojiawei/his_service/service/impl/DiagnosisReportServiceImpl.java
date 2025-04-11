@@ -6,14 +6,17 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.luojiawei.common.domain.dto.DiagnosisReportDetails;
 import com.luojiawei.common.domain.dto.Result;
+import com.luojiawei.common.domain.dto.UserDTO;
 import com.luojiawei.common.domain.dto.inner.DoctorInfo;
 import com.luojiawei.common.domain.dto.inner.PatientInfo;
 import com.luojiawei.common.domain.po.*;
 import com.luojiawei.common.domain.vo.DiagnosisListVO;
 import com.luojiawei.common.domain.vo.Diagnosises;
 
+import com.luojiawei.common.utils.UserHolder;
 import com.luojiawei.his_service.mapper.*;
 import com.luojiawei.his_service.service.IDiagnosisReportService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +45,12 @@ public class DiagnosisReportServiceImpl extends ServiceImpl<DiagnosisReportMappe
     public Result<DiagnosisListVO> diagnosisReports(Integer pageNumber, Integer pageSize, String status) {
         Page<Diagnosises> page = new Page<>(pageNumber, pageSize);
         // 调用 Mapper 方法，执行分页查询
-        IPage<Diagnosises> DiagnosisList = diagnosisReportMapper.getDiagnosisList(page,status);
+        //将用户的id拿出来
+        UserDTO user = UserHolder.getUser();
+        if(user.getId()==null) {
+            return Result.fail("用户id为空");
+        }
+        IPage<Diagnosises> DiagnosisList = diagnosisReportMapper.getDiagnosisList(page,status,user.getId());
         DiagnosisListVO diagnosisListVO = new DiagnosisListVO();
         diagnosisListVO.setTotal((int) DiagnosisList.getTotal());
         diagnosisListVO.setPageNumber(pageNumber);
@@ -54,7 +62,11 @@ public class DiagnosisReportServiceImpl extends ServiceImpl<DiagnosisReportMappe
     @Override
     public Result<DiagnosisListVO> diagnosisHistory(Integer pageNumber, Integer pageSize, String startDate, String endDate, String status) {
         Page<Diagnosises> page = new Page<>(pageNumber, pageSize);
-        IPage<Diagnosises> DiagnosisList = diagnosisReportMapper.getDiagnosisHistory(page,startDate,endDate,status);
+        UserDTO user = UserHolder.getUser();
+        if(user.getId()==null) {
+            return Result.fail("用户id为空");
+        }
+        IPage<Diagnosises> DiagnosisList = diagnosisReportMapper.getDiagnosisHistory(page,startDate,endDate,status,user.getId());
         DiagnosisListVO diagnosisListVO = new DiagnosisListVO();
         diagnosisListVO.setTotal((int) DiagnosisList.getTotal());
         diagnosisListVO.setPageNumber(pageNumber);

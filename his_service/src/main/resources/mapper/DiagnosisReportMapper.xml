@@ -19,6 +19,9 @@
             <if test="status != null">
                 AND d.status = #{status}
             </if>
+            <if test="id != null">
+                AND d.patient_id = #{id}
+            </if>
         </where>
         <!-- 确保ORDER BY字段有索引 -->
         ORDER BY d.create_time DESC
@@ -51,6 +54,9 @@
             </if>
             <if test="status != null" >
                 status = #{status}
+            </if>
+            <if test="id != null">
+                AND d.patient_id = #{id}
             </if>
         </where>
         ORDER BY create_time Desc

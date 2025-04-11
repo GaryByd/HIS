@@ -113,20 +113,15 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient> impl
         }
         // 5. 生成 token
         String token = JwtUtil.createJWT(tokenId, openId, 2592000000L);
-        // 6. 创建线程池
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        executorService.execute(() -> {
-            // 7. 将用户信息保存到 Redis 中
-            Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
-                    CopyOptions.create().setIgnoreNullValue(true)
-                            .setFieldValueEditor((key, value) -> value != null ? value.toString() : ""));
-            stringRedisTemplate.opsForHash().putAll(LOGIN_USER_KEY + token, userMap);
-            // 8. 设置 token 过期时间
-            stringRedisTemplate.expire(LOGIN_USER_KEY + token, LOGIN_USER_TTL, TimeUnit.MINUTES);
-            // 9. 将 token 保存到 session 中
-            session.setAttribute("user", userDTO);
-            executorService.shutdown();
-        });
+        // 7. 将用户信息保存到 Redis 中
+        Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
+                CopyOptions.create().setIgnoreNullValue(true)
+                        .setFieldValueEditor((key, value) -> value != null ? value.toString() : ""));
+        stringRedisTemplate.opsForHash().putAll(LOGIN_USER_KEY + token, userMap);
+        // 8. 设置 token 过期时间
+        stringRedisTemplate.expire(LOGIN_USER_KEY + token, LOGIN_USER_TTL, TimeUnit.MINUTES);
+        // 9. 将 token 保存到 session 中
+        session.setAttribute("user", userDTO);
         // 关闭线程池
         // 10. 返回结果
         return Result.ok("Success", new LoginVo(token, userDTO));

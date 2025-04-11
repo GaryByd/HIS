@@ -13,8 +13,7 @@ public class MvcConfig implements WebMvcConfigurer {
         WebMvcConfigurer.super.addInterceptors(registry);
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**")
-//                .excludePathPatterns("/patient/auth/login")
-                .excludePathPatterns("/**")
+                .excludePathPatterns("/patient/auth/login")
                 .order(1); // 设置拦截器的顺序
     }
 }

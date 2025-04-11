@@ -20,7 +20,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface DiagnosisReportMapper extends BaseMapper<DiagnosisReport> {
 
-    IPage<Diagnosises> getDiagnosisList(Page<Diagnosises> page, String status);
+    IPage<Diagnosises> getDiagnosisList(Page<Diagnosises> page, String status, Long id);
 
-    IPage<Diagnosises> getDiagnosisHistory(Page<Diagnosises> page, String startDate, String endDate, String status);
+    IPage<Diagnosises> getDiagnosisHistory(Page<Diagnosises> page, String startDate, String endDate, String status,Long id);
 }
