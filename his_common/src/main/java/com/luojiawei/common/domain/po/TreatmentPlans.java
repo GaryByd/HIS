@@ -43,7 +43,7 @@ public class TreatmentPlans implements Serializable {
 
     @ApiModelProperty(value = "治疗类型（药物、手术、激光治疗等）")
     @JsonProperty("treatment_type")
-    private Integer treatmentType;
+    private String treatmentType;
 
     @ApiModelProperty(value = "治疗方案详细信息")
     @JsonProperty("treatment_detail")

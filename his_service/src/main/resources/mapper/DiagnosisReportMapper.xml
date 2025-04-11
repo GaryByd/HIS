@@ -27,8 +27,6 @@
     <select id="getDiagnosisHistory" resultType="com.luojiawei.common.domain.vo.Diagnosises">
         SELECT
         d.id,
-        d.disease_name,
-        d.disease_category,
         d.create_time,
         d.status,
         d.result,
